@@ -1,0 +1,28 @@
+{
+    "key":"doclink",
+    "legacyScriptURL":"http://localhost:8080/doclink_leg.js",
+    "scriptURL":"http://localhost:8080/doclink_ng.js",
+    "legacyStyleSheetURL":"http://localhost:8080/doclink_leg.css",
+    "styleSheetURL":"http://localhost:8080/doclink_ng.css",
+    "icon":"Link",
+    "attributes":{
+        "uploadOutcome":"Upload Outcome Name",
+        "clearIconValue":"Clear Icon URL",
+        "fileUploadValue":"File Upload Value",
+        "selectIconValue":"Select Icon URL",
+        "addFileIconValue":"Upload Icon URL",
+        "addLinkIconValue":"Link Icon URL"
+    },
+    "configurationEditors":["LABEL","HINT_VALUE","STATE_VALUE","DATA_SOURCE_LIST"],
+    "designTimeImageURL":null,
+    "designTimeRenderType":"INPUT",
+    "dateCreated":"2024-07-29T14:27:28.790123+00:00",
+    "dateModified":"2024-09-25T09:03:08.9578525+00:00",
+    "id":"fa0b0a9d-79e9-4543-8d15-bc024a3ae98e",
+    "elementType":"CUSTOM_PAGE_COMPONENT",
+    "developerName":"Document Link Picker",
+    "developerSummary":"Allows upsert, manual entry and selection of a document",
+    "whoCreated":{"id":"22dcefc8-b407-4974-8044-327cb44b134e","firstName":"Mark","lastName":"Watts","email":"markwatts@boomi.com"},
+    "whoModified":{"id":"22dcefc8-b407-4974-8044-327cb44b134e","firstName":"Mark","lastName":"Watts","email":"markwatts@boomi.com"},
+    "whoOwner":{"id":"22dcefc8-b407-4974-8044-327cb44b134e","firstName":"Mark","lastName":"Watts","email":"markwatts@boomi.com"}
+}
