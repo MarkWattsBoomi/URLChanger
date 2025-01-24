@@ -1,7 +1,7 @@
 {
-  "name": "doclink",
+  "name": "urloutcome",
   "version": "1.0.0",
-  "description": "Doc Link Input",
+  "description": "Url changer / Outcome timer",
   "scripts": {
     "start": "esbuild ./src/URLChangerNew.tsx --outfile=./build/urlchanger_ng.js --sourcemap=both --serve=8080 --servedir=build --bundle --format=esm --watch",
     "build": "esbuild ./src/URLChangerNew.tsx --outfile=./build/urlchanger_ng.js --bundle  --format=esm",
@@ -12,7 +12,7 @@
   "author": "Boomi",
   "license": "MIT",
   "dependencies": {
-    "fcmlib": "^1.0.87",
+    "fcmlib": "^1.0.97",
     "react": "18.2.0"
   },
   "devDependencies": {

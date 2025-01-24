@@ -1,0 +1,24 @@
+{
+    "key":"urlchanger",
+    "legacyScriptURL":"http://localhost:8080/urlchanger_leg.js",
+    "scriptURL":"http://localhost:8080/urlchanger_ng.js",
+    "legacyStyleSheetURL":"",
+    "styleSheetURL":"",
+    "icon":"Path",
+    "attributes":{
+        "outcomename":"Outcome Name",
+        "delay","Delay MS"
+    },
+    "configurationEditors":["STATE_VALUE"],
+    "designTimeImageURL":"",
+    "designTimeRenderType":"FILE-UPLOAD",
+    "dateCreated":"2024-10-29T09:24:13.8545956+00:00",
+    "dateModified":"2024-10-29T09:24:13.8546307+00:00",
+    "id":"5d941791-0707-4510-a110-02fe0589728a",
+    "elementType":"CUSTOM_PAGE_COMPONENT",
+    "developerName":"URL Changer",
+    "developerSummary":"Forces the browser to change url to the state value or triggers an outcome after a specifid no. MS",
+    "whoCreated":{"id":"22dcefc8-b407-4974-8044-327cb44b134e","firstName":"Mark","lastName":"Watts","email":"markwatts@boomi.com"},
+    "whoModified":{"id":"22dcefc8-b407-4974-8044-327cb44b134e","firstName":"Mark","lastName":"Watts","email":"markwatts@boomi.com"},
+    "whoOwner":{"id":"22dcefc8-b407-4974-8044-327cb44b134e","firstName":"Mark","lastName":"Watts","email":"markwatts@boomi.com"}
+}

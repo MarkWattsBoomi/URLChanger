@@ -8,6 +8,7 @@ Changes the browser's url.
 
 If the attribute "outcomeName" is configured and contains the name of an 
 outcome attached to the component then it will be automatically triggered on load.
+This can be delayed by setting the Delay MS attribute.
 
 Otherwise
 
