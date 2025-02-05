@@ -1,6 +1,6 @@
 {
   "name": "urloutcome",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Url changer / Outcome timer",
   "scripts": {
     "start": "esbuild ./src/URLChangerNew.tsx --outfile=./build/urlchanger_ng.js --sourcemap=both --serve=8080 --servedir=build --bundle --format=esm --watch",
@@ -12,7 +12,7 @@
   "author": "Boomi",
   "license": "MIT",
   "dependencies": {
-    "fcmlib": "^1.0.97",
+    "fcmlib": "^1.0.98",
     "react": "18.2.0"
   },
   "devDependencies": {

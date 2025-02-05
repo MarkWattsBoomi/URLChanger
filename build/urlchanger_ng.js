@@ -2959,7 +2959,7 @@ var FCMNew = class extends FCMCore {
   }
   constructor(props) {
     super(props);
-    this.flowBaseUri = window.location.origin;
+    this.flowBaseUri = window.flowBaseUri || window.location.origin;
   }
   /*
       UNSAFE_componentWillReceiveProps(nextProps: Readonly<any>, nextContext: any): void {
