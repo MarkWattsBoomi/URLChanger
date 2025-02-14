@@ -2947,7 +2947,7 @@ var FCMCore = class extends import_react.default.Component {
   }
   // this takes a string value and if it is the {{FieldName->property}} notation it will
   // load the base flow value, save it to the Fields list and extapolate the requested property
-  inflateValue(input) {
+  inflateValue(input, forceRefresh = false) {
     return __awaiter(this, void 0, void 0, function* () {
       if (input) {
         let value;
@@ -2956,7 +2956,7 @@ var FCMCore = class extends import_react.default.Component {
         while (match = RegExp(/{{([^}]*)}}/).exec(input)) {
           const fldElements = match[1].split("->");
           let fld;
-          if (!this.fields[fldElements[0]]) {
+          if (!this.fields[fldElements[0]] || forceRefresh === true) {
             fld = yield this.getValue(fldElements[0]);
             this.fields[fldElements[0]] = fld;
           } else {

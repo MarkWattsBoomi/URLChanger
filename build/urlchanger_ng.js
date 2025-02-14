@@ -2843,7 +2843,7 @@ var FCMCore = class extends import_react.default.Component {
   }
   // this takes a string value and if it is the {{FieldName->property}} notation it will
   // load the base flow value, save it to the Fields list and extapolate the requested property
-  inflateValue(input) {
+  inflateValue(input, forceRefresh = false) {
     return __awaiter(this, void 0, void 0, function* () {
       if (input) {
         let value;
@@ -2852,7 +2852,7 @@ var FCMCore = class extends import_react.default.Component {
         while (match = RegExp(/{{([^}]*)}}/).exec(input)) {
           const fldElements = match[1].split("->");
           let fld;
-          if (!this.fields[fldElements[0]]) {
+          if (!this.fields[fldElements[0]] || forceRefresh === true) {
             fld = yield this.getValue(fldElements[0]);
             this.fields[fldElements[0]] = fld;
           } else {
@@ -2961,61 +2961,25 @@ var FCMNew = class extends FCMCore {
     super(props);
     this.flowBaseUri = window.flowBaseUri || window.location.origin;
   }
-  /*
-      UNSAFE_componentWillReceiveProps(nextProps: Readonly<any>, nextContext: any): void {
-          // if the component id changed always reload.
-          if (nextProps.element.id !== this.id) {
-              if(this.loadModel(nextProps)){
-                  if(this.childComponent && this.componentDidMount) {
-                      this.componentDidMount();
-                  }
-              }
-              else{
-                  if(this.childComponent && this.componentUpdated) {
-                      this.componentUpdated(false);
-                  }
-                  else if(this.childComponent && this.componentDidMount) {
-                      this.componentDidMount();
-                  }
-              }
-          }
-          else {
-              let reload: boolean = true;
-              switch(this.contentType){
-                  case eContentType.ContentObject:
-                  case eContentType.ContentList:
-                      if(nextProps.element.objectData === null || nextProps.element.objectData.length === 0){
-                          reload = false;
-                      }
-                      break;
-                  default:
-                      if(nextProps.element.contentValue === null){
-                          reload = false;
-                      }
-                      break;
-              }
-  
-              if(reload){
-                  let newModel: FlowObjectDataArray = new FlowObjectDataArray(nextProps.element.objectData);
-                  if(JSON.stringify(this.objectData) != JSON.stringify(newModel)){
-                      if(this.loadModel(nextProps)){
-                          if(this.childComponent && this.componentDidMount) {
-                              this.componentDidMount();
-                          }
-                      }
-                      else {
-                          if(this.childComponent && this.componentUpdated) {
-                              this.componentUpdated(false);
-                          }
-                          else if(this.childComponent && this.componentDidMount) {
-                              this.componentDidMount();
-                          }
-                      }
-                  }
-              }
-          }
-      }
-      */
+  componentDidMount() {
+    let reload = true;
+    switch (this.contentType) {
+      case eContentType.ContentObject:
+      case eContentType.ContentList:
+        if (this.props.element.objectData === null || this.props.element.objectData.length === 0) {
+          reload = false;
+        }
+        break;
+      default:
+        if (this.props.element.contentValue === null) {
+          reload = false;
+        }
+        break;
+    }
+    if (reload) {
+      this.loadModel(this.props);
+    }
+  }
   componentUpdated(changeDetected) {
   }
   loadModel(props) {
